@@ -36,12 +36,13 @@ public class PatientFormRequest implements Serializable {
 	private String age;
 	private String city;
 	private String state;
+	private String imgLocation;
 
 	@Override
 	public String toString() {
-		return "PatientFormRequest [title=" + title + ", firstName=" + firstName + ", middleName=" + middleName
-				+ ", lastName=" + lastName + ", gender=" + gender + ", mobileNumber=" + mobileNumber + ", age=" + age
-				+ ", city=" + city + ", state=" + state + "]";
+		return "PatientFormRequest [_id=" + _id + ", title=" + title + ", firstName=" + firstName + ", middleName="
+				+ middleName + ", lastName=" + lastName + ", gender=" + gender + ", mobileNumber=" + mobileNumber
+				+ ", age=" + age + ", city=" + city + ", state=" + state + ", imgLocation=" + imgLocation + "]";
 	}
 
 }

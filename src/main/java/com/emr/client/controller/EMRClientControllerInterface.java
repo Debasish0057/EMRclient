@@ -12,6 +12,9 @@ import com.emr.client.entity.PatientFormRequest;
 public interface EMRClientControllerInterface {
 
 	@PostMapping(path = "/patientform", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> getPatientDetails(@RequestBody PatientFormRequest patientForm);
+	public ResponseEntity<?> savePatientDetails(@RequestBody PatientFormRequest patientForm);
+	
+	@PostMapping(path = "/getallpatient", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> getAllPatient();
 
 }

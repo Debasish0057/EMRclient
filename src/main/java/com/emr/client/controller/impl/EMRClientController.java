@@ -1,5 +1,7 @@
 package com.emr.client.controller.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +19,16 @@ public class EMRClientController implements EMRClientControllerInterface {
 	PatientDAO patientDAO;
 
 	@Override
-	public ResponseEntity<?> getPatientDetails(PatientFormRequest patientForm) {
+	public ResponseEntity<?> savePatientDetails(PatientFormRequest patientForm) {
 		commonResponse commonResponse = null;
 
 		try {
+			if(patientForm.getGender().equals("MALE")) {
+				patientForm.setImgLocation("avatar");
+			}else {
+				patientForm.setImgLocation("avatar2");
+			}
+			
 			PatientFormRequest patientFormRequest = patientDAO.save(patientForm);
 			commonResponse = new commonResponse("SUCCESS", "", String.valueOf(patientFormRequest.get_id()), 200);
 		} catch (DataIntegrityViolationException e) {
@@ -28,5 +36,11 @@ public class EMRClientController implements EMRClientControllerInterface {
 		}
 
 		return ResponseEntity.ok(commonResponse);
+	}
+
+	@Override
+	public ResponseEntity<?> getAllPatient() {
+		List<PatientFormRequest> patientFormRequest = patientDAO.findAll();
+		return ResponseEntity.ok(patientFormRequest);
 	}
 }
