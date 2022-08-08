@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class commonResponse {
-	private String status;
+	private boolean isSuccess;
 	private String errorMsg;
 	private String id;
 	private int statusCode;
 
 	@Override
 	public String toString() {
-		return "ResponseEntity [status=" + status + ", statusCode=" + statusCode + "]";
+		return "ResponseEntity [status=" + isSuccess + ", statusCode=" + statusCode + "]";
 	}
 
 }
