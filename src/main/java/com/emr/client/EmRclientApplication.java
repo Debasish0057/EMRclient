@@ -30,7 +30,7 @@ public class EmRclientApplication {
   public void initUsers() {
 
 
-    PatientFormRequest patientFormRequest1 = new PatientFormRequest();
+    /*PatientFormRequest patientFormRequest1 = new PatientFormRequest();
     patientFormRequest1.setTitle("MR");
     patientFormRequest1.setFirstName("Amit");
     patientFormRequest1.setMiddleName("Kumar");
@@ -84,7 +84,7 @@ public class EmRclientApplication {
     List<PatientFormRequest> patientForm = Stream.of(patientFormRequest1,patientFormRequest2,patientFormRequest3)
         .collect(Collectors.toList());
     System.out.println(patientForm);
-    patientDAO.saveAll(patientForm);
+    patientDAO.saveAll(patientForm);*/
   }
 
   @Bean
